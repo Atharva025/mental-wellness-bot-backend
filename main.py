@@ -13,7 +13,7 @@ logger = logging.getLogger(__name__)
 # Initialize Flask app
 app = Flask(__name__)
 # Configure CORS to allow requests from your frontend explicitly
-CORS(app, resources={r"/api/*": {"origins": "*"}})
+CORS(app, resources={r"/api/*": {"origins": ["https://mental-wellness-ten.vercel.app", "*"]}})
 
 # Model paths - adjust based on your project structure
 MODEL_PATH = os.path.join(os.path.dirname(__file__), 'model')
