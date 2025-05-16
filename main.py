@@ -13,7 +13,7 @@ logger = logging.getLogger(__name__)
 # Initialize Flask app
 app = Flask(__name__)
 # Configure CORS to allow requests from your frontend explicitly
-CORS(app, resources={r"/api/*": {"origins": ["http://localhost:5173", "http://localhost:3000", "*"]}})
+CORS(app, resources={r"/api/*": {"origins": "*"}})
 
 # Model paths - adjust based on your project structure
 MODEL_PATH = os.path.join(os.path.dirname(__file__), 'model')
@@ -210,6 +210,7 @@ if __name__ == "__main__":
     model, tokenizer = load_mental_health_model()
     print(f"Model loaded: {model is not None}, Tokenizer loaded: {tokenizer is not None}")
     
-    # Run the Flask app
-    app.run(host='0.0.0.0', port=5000, debug=False)  # Set debug=False for production
+    # Get port from environment variable or default to 5000
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host='0.0.0.0', port=port, debug=False)
     
