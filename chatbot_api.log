@@ -1,0 +1,82 @@
+2025-05-16 01:59:20,555 - __main__ - INFO - Model loaded successfully. Using device: cpu
+2025-05-16 02:00:17,052 - __main__ - INFO - Request: GET http://localhost:8000/health
+2025-05-16 02:00:17,053 - __main__ - INFO - Health check: healthy
+2025-05-16 02:00:17,057 - __main__ - INFO - Request: GET http://localhost:8000/health
+2025-05-16 02:00:17,058 - __main__ - INFO - Health check: healthy
+2025-05-16 02:00:21,517 - __main__ - INFO - Request: GET http://localhost:8000/health
+2025-05-16 02:00:21,518 - __main__ - INFO - Health check: healthy
+2025-05-16 02:00:40,010 - __main__ - INFO - Request: OPTIONS http://localhost:8000/api/chat
+2025-05-16 02:00:40,019 - __main__ - INFO - Request: POST http://localhost:8000/api/chat
+2025-05-16 02:00:40,041 - __main__ - INFO - Received chat request
+2025-05-16 02:00:40,041 - __main__ - INFO - Using conversation history for context
+2025-05-16 02:00:40,042 - __main__ - INFO - Tokenizing input (length: 81)
+2025-05-16 02:00:40,057 - __main__ - INFO - Generating model response
+2025-05-16 02:00:46,828 - __main__ - INFO - Generated response: Hi there! I'm here to support you. How are you feeling today? It's great that you've reached out to ...
+2025-05-16 02:08:06,013 - __main__ - INFO - Request: GET http://localhost:8000/health
+2025-05-16 02:08:06,014 - __main__ - INFO - Health check: healthy
+2025-05-16 02:08:06,017 - __main__ - INFO - Request: GET http://localhost:8000/health
+2025-05-16 02:08:06,017 - __main__ - INFO - Health check: healthy
+2025-05-16 02:09:07,108 - __main__ - INFO - Request: POST http://localhost:8000/api/chat
+2025-05-16 02:09:07,112 - __main__ - INFO - Received chat request
+2025-05-16 02:09:07,113 - __main__ - INFO - Using conversation history for context
+2025-05-16 02:09:07,114 - __main__ - INFO - Tokenizing input (length: 326)
+2025-05-16 02:09:07,117 - __main__ - INFO - Generating model response
+2025-05-16 02:09:13,650 - __main__ - INFO - Generated response: It's great that you're here to help nurture your mind. Here are some suggestions that may help: 1. S...
+2025-05-16 02:13:00,861 - __main__ - INFO - Request: GET http://localhost:8000/health
+2025-05-16 02:13:00,866 - __main__ - INFO - Health check: healthy
+2025-05-16 02:13:00,876 - __main__ - INFO - Request: GET http://localhost:8000/health
+2025-05-16 02:13:00,878 - __main__ - INFO - Health check: healthy
+2025-05-16 02:24:11,891 - __main__ - INFO - Request: GET http://localhost:8000/health
+2025-05-16 02:24:11,895 - __main__ - INFO - Health check: healthy
+2025-05-16 02:24:11,901 - __main__ - INFO - Request: GET http://localhost:8000/health
+2025-05-16 02:24:11,902 - __main__ - INFO - Health check: healthy
+2025-05-16 02:24:16,211 - __main__ - INFO - Request: GET http://localhost:8000/health
+2025-05-16 02:24:16,212 - __main__ - INFO - Health check: healthy
+2025-05-16 02:24:16,214 - __main__ - INFO - Request: GET http://localhost:8000/health
+2025-05-16 02:24:16,215 - __main__ - INFO - Health check: healthy
+2025-05-16 02:28:15,103 - __main__ - INFO - Model loaded successfully. Using device: cpu
+2025-05-16 02:28:23,560 - __main__ - INFO - Request: GET http://localhost:8000/health
+2025-05-16 02:28:23,563 - __main__ - INFO - Health check: healthy
+2025-05-16 02:28:23,570 - __main__ - INFO - Request: GET http://localhost:8000/health
+2025-05-16 02:28:23,571 - __main__ - INFO - Health check: healthy
+2025-05-16 02:28:41,095 - __main__ - INFO - Request: OPTIONS http://localhost:8000/api/chat
+2025-05-16 02:28:41,106 - __main__ - INFO - Request: POST http://localhost:8000/api/chat
+2025-05-16 02:36:43,120 - __main__ - INFO - Model loaded successfully. Using device: cpu
+2025-05-16 02:36:43,121 - __main__ - WARNING - GEMINI_API_KEY not found in environment variables. Gemini enhancement will be skipped.
+2025-05-16 02:36:51,656 - __main__ - INFO - Request: GET http://localhost:8000/health
+2025-05-16 02:36:51,659 - __main__ - INFO - Health check: healthy, Gemini: not_configured
+2025-05-16 02:36:51,668 - __main__ - INFO - Request: GET http://localhost:8000/health
+2025-05-16 02:36:51,670 - __main__ - INFO - Health check: healthy, Gemini: not_configured
+2025-05-16 02:36:56,639 - __main__ - INFO - Request: POST http://localhost:8000/api/chat
+2025-05-16 02:49:50,496 - __main__ - INFO - Model loaded successfully. Using device: cpu
+2025-05-16 02:50:04,891 - __main__ - INFO - Request: GET http://localhost:8000/health
+2025-05-16 02:50:04,894 - __main__ - INFO - Health check: healthy, Gemini: available
+2025-05-16 02:50:04,902 - __main__ - INFO - Request: GET http://localhost:8000/health
+2025-05-16 02:50:04,903 - __main__ - INFO - Health check: healthy, Gemini: available
+2025-05-16 02:50:10,506 - __main__ - INFO - Request: OPTIONS http://localhost:8000/api/chat
+2025-05-16 02:50:10,524 - __main__ - INFO - Request: POST http://localhost:8000/api/chat
+2025-05-16 02:51:27,509 - __main__ - INFO - Model loaded successfully. Using device: cpu
+2025-05-16 02:51:31,070 - __main__ - INFO - Request: GET http://localhost:8000/health
+2025-05-16 02:51:31,073 - __main__ - INFO - Health check: healthy
+2025-05-16 02:51:31,082 - __main__ - INFO - Request: GET http://localhost:8000/health
+2025-05-16 02:51:31,084 - __main__ - INFO - Health check: healthy
+2025-05-16 02:51:35,933 - __main__ - INFO - Request: POST http://localhost:8000/api/chat
+2025-05-16 02:51:35,942 - __main__ - INFO - Received chat request
+2025-05-16 02:51:35,943 - __main__ - INFO - Using conversation history for context
+2025-05-16 02:51:35,945 - __main__ - INFO - Tokenizing input (length: 326)
+2025-05-16 02:51:35,975 - __main__ - INFO - Generating model response
+2025-05-16 02:51:52,142 - __main__ - INFO - Generated response: It's great that you're here to help nurture your mind. Here are some suggestions that may help: 1. S...
+2025-05-16 03:00:12,811 - __main__ - INFO - Model loaded successfully. Using device: cpu
+2025-05-16 03:00:12,812 - __main__ - WARNING - GEMINI_API_KEY not found in environment variables. Set with: export GEMINI_API_KEY=your_key_here
+2025-05-16 03:00:15,947 - __main__ - INFO - Request: GET http://localhost:8000/health
+2025-05-16 03:00:15,950 - __main__ - INFO - Health check: healthy, Gemini: not_configured
+2025-05-16 03:00:15,959 - __main__ - INFO - Request: GET http://localhost:8000/health
+2025-05-16 03:00:15,961 - __main__ - INFO - Health check: healthy, Gemini: not_configured
+2025-05-16 03:00:19,565 - __main__ - INFO - Request: OPTIONS http://localhost:8000/api/chat
+2025-05-16 03:00:19,575 - __main__ - INFO - Request: POST http://localhost:8000/api/chat
+2025-05-16 03:01:25,186 - __main__ - INFO - Request: POST http://localhost:8000/api/chat
+2025-05-16 11:06:09,506 - __main__ - INFO - Model loaded successfully. Using device: cpu
+2025-05-16 11:06:09,508 - __main__ - WARNING - GEMINI_API_KEY not found in environment variables. Gemini enhancement will be skipped.
+2025-05-16 11:06:23,586 - __main__ - INFO - Request: OPTIONS http://localhost:8000/api/chat
+2025-05-16 11:06:23,602 - __main__ - INFO - Request: POST http://localhost:8000/api/chat
+2025-05-16 11:08:25,480 - __main__ - INFO - Request: POST http://localhost:8000/api/chat

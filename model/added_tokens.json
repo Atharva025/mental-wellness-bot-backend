@@ -1,0 +1,10 @@
+{
+  "[ANXIETY]": 50265,
+  "[CRISIS]": 50269,
+  "[DEPRESSION]": 50266,
+  "[RESOURCE]": 50272,
+  "[STRESS]": 50267,
+  "[SUICIDAL]": 50270,
+  "[SUPPORT]": 50268,
+  "[URGENT]": 50271
+}
