@@ -22,27 +22,38 @@ MODEL_PATH = os.path.join(os.path.dirname(__file__), 'model')
 model = None
 tokenizer = None
 
+# Replace the load_mental_health_model function with this:
 def load_mental_health_model():
-    """Load the fine-tuned model and tokenizer"""
+    """Load the fine-tuned model and tokenizer from Hugging Face Hub"""
     global model, tokenizer
     
     try:
-        logger.info("Loading model and tokenizer from %s", MODEL_PATH)
+        # Your Hugging Face model ID 
+        model_id = "Atharva025/mental-wellness-chatbot"  # Replace with your username
+        
+        logger.info(f"Loading model and tokenizer from Hugging Face Hub: {model_id}")
+        
+        # Set your token if your model is private
+        hf_token = os.environ.get('HF_TOKEN')
         
         # Load tokenizer with special tokens
-        tokenizer = AutoTokenizer.from_pretrained(MODEL_PATH)
+        tokenizer = AutoTokenizer.from_pretrained(model_id, token=hf_token)
         
-        # Load the model - fixed class name
-        model = AutoModelForSeq2SeqLM.from_pretrained(MODEL_PATH)
+        # Load the model with memory optimization
+        model = AutoModelForSeq2SeqLM.from_pretrained(
+            model_id, 
+            token=hf_token,
+            low_cpu_mem_usage=True  # Good for deployment environments with limited RAM
+        )
         
         # Move model to GPU if available
         device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
         model.to(device)
         
-        logger.info(f"Model loaded successfully. Using device: {device}")
+        logger.info(f"Model loaded successfully from Hugging Face. Using device: {device}")
         return model, tokenizer
     except Exception as e:
-        logger.error(f"Error loading model: {str(e)}")
+        logger.error(f"Error loading model from Hugging Face: {str(e)}")
         return None, None
 
 def detect_mood(text):
