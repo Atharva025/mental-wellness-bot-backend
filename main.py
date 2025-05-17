@@ -29,22 +29,39 @@ def load_mental_health_model():
     
     try:
         # Your Hugging Face model ID 
-        model_id = "Atharva025/mental-wellness-chatbot"  # Replace with your username
+        model_id = "Atharva025/mental-wellness-chatbot"
         
         logger.info(f"Loading model and tokenizer from Hugging Face Hub: {model_id}")
         
         # Set your token if your model is private
         hf_token = os.environ.get('HF_TOKEN')
         
-        # Load tokenizer with special tokens
-        tokenizer = AutoTokenizer.from_pretrained(model_id, token=hf_token)
+        # Load tokenizer with more robust error handling
+        try:
+            tokenizer = AutoTokenizer.from_pretrained(model_id, token=hf_token)
+        except Exception as e:
+            logger.error(f"Error loading tokenizer: {str(e)}")
+            # Try alternative loading without token
+            logger.info("Attempting to load tokenizer without token...")
+            tokenizer = AutoTokenizer.from_pretrained(model_id)
         
-        # Load the model with memory optimization
-        model = AutoModelForSeq2SeqLM.from_pretrained(
-            model_id, 
-            token=hf_token,
-            low_cpu_mem_usage=True  # Good for deployment environments with limited RAM
-        )
+        # Load the model with more robust error handling
+        try:
+            model = AutoModelForSeq2SeqLM.from_pretrained(
+                model_id, 
+                token=hf_token,
+                low_cpu_mem_usage=True,
+                torch_dtype=torch.float32  # Explicitly set data type
+            )
+        except Exception as e:
+            logger.error(f"Error loading model with token: {str(e)}")
+            # Try alternative loading without token
+            logger.info("Attempting to load model without token...")
+            model = AutoModelForSeq2SeqLM.from_pretrained(
+                model_id, 
+                low_cpu_mem_usage=True,
+                torch_dtype=torch.float32
+            )
         
         # Move model to GPU if available
         device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
