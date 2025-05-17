@@ -33,35 +33,23 @@ def load_mental_health_model():
         
         logger.info(f"Loading model and tokenizer from Hugging Face Hub: {model_id}")
         
-        # Set your token if your model is private
-        hf_token = os.environ.get('HF_TOKEN')
-        
-        # Load tokenizer with more robust error handling
+        # Load tokenizer - no token needed for public models
         try:
-            tokenizer = AutoTokenizer.from_pretrained(model_id, token=hf_token)
+            tokenizer = AutoTokenizer.from_pretrained(model_id)
         except Exception as e:
             logger.error(f"Error loading tokenizer: {str(e)}")
-            # Try alternative loading without token
-            logger.info("Attempting to load tokenizer without token...")
-            tokenizer = AutoTokenizer.from_pretrained(model_id)
+            return None, None
         
-        # Load the model with more robust error handling
+        # Load the model - no token needed for public models
         try:
             model = AutoModelForSeq2SeqLM.from_pretrained(
-                model_id, 
-                token=hf_token,
+                model_id,
                 low_cpu_mem_usage=True,
                 torch_dtype=torch.float32  # Explicitly set data type
             )
         except Exception as e:
-            logger.error(f"Error loading model with token: {str(e)}")
-            # Try alternative loading without token
-            logger.info("Attempting to load model without token...")
-            model = AutoModelForSeq2SeqLM.from_pretrained(
-                model_id, 
-                low_cpu_mem_usage=True,
-                torch_dtype=torch.float32
-            )
+            logger.error(f"Error loading model: {str(e)}")
+            return None, None
         
         # Move model to GPU if available
         device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
